@@ -1,4 +1,4 @@
-## What is mcbench
+## What is mcbench?
 mcbench is memcached benchmark tool written in Erlang.
 
 ## Building and Installing 
