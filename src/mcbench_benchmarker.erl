@@ -97,44 +97,6 @@ insert_base_data(Host, Port, BaseDataCount) ->
                end,
                [Keys]).
 
-
-%% insert_random_data(Host, Port, Count) ->
-%%     case memcached:connect(Host, Port) of
-%%         {ok, Conn} ->
-%%             ok = do_times(Count,
-%%                           fun(C) ->
-%%                                   Key = integer_to_list(crypto:rand_uniform(1, 100000)),
-%%                                   ok = memcached:set(C, Key, "1")
-%%                           end,
-%%                           [Conn]),
-%%             ok = memcached:disconnect(Conn);
-%%         Other ->
-%%             Other
-%%     end.
-
-%% insert_base_data(Host, Port, BaseDataCount) ->
-%%     WorkersCount = 10,
-%%     if
-%%         BaseDataCount > WorkersCount andalso BaseDataCount rem WorkersCount =:= 0 ->
-%%             CountPerWorker = BaseDataCount div WorkersCount,
-%%             do_workers(WorkersCount,
-%%                        fun() ->
-%%                                ok = insert_random_data(Host, Port, CountPerWorker),
-%%                                io:format("."),
-%%                                ok
-%%                        end,
-%%                        []);
-%%        true ->
-%%             insert_random_data(Host, Port, BaseDataCount)
-%%     end.
-
-
-do_times(0, _Fun, _Args) ->
-    ok;
-do_times(N, Fun, Args) ->
-    apply(Fun, Args),
-    do_times(N - 1, Fun, Args).
-
 do_workers(N, Fun, Args) ->
     do_workers(N, N, Fun, Args).
 do_workers(Max, 0, _Fun, _Args) ->
