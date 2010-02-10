@@ -3,7 +3,7 @@ mcbench is memcached benchmark tool written in Erlang.
 
 ### Building and Installing 
   1. Install a recent version of Erlang.
-  2. Get a release of mcbench from http://github.com/higepon/mcbench/downloads.
+  2. Get a release of mcbench from [Download](http://github.com/higepon/mcbench/downloads).
   3. make
   4. make install with Environment variables for configuration.
      TARGET_DIR: Installation target directory.
