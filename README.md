@@ -18,7 +18,7 @@ mcbench is memcached benchmark tool written in Erlang.
     % mcbench -b 10000  -t 10 -n 100 -c get     
 
     # benchmark of "set" command. 10 threads and 100 commands/thread.
-    % mcbench -s 10.0.0.1 -p 11211 -t 10 -n 100 -c get     
+    % mcbench -s 10.0.0.1 -p 11211 -t 10 -n 100 -c set     
 
 ### Author
 Copyright (C) Cybozu Labs, Inc., written by Taro Minowa(Higepon) <higepon@labs.cybozu.co.jp>
