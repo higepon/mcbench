@@ -10,7 +10,7 @@ mcbench is memcached benchmark tool written in Erlang.
      SBIN_DIR: sbin direcotry.
 
      e.g.
-       TARGET_DIR=/user/local/mcbench SBIN_DIR=/usr/sbin/ make install 
+       sudo TARGET_DIR=/user/local/mcbench SBIN_DIR=/usr/sbin/ make install 
 
 ## Running mcbench
 
