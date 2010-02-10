@@ -23,8 +23,7 @@ ERLC_FLAGS=+warn_unused_vars \
            +native +"{hipe, [o3]}" \
 
 TARBALL_NAME=$(APP_NAME)-$(VERSION)
-DIST_TMP_DIR=tmp
-DIST_TARGET=$(DIST_TMP_DIR)/$(TARBALL_NAME)
+DIST_TARGET=$(TARBALL_NAME)
 
 all: $(TARGETS)
 
@@ -58,12 +57,12 @@ install_dirs:
 	mkdir -p $(SBIN_DIR)
 	mkdir -p $(TARGET_DIR)/sbin
 
-dist: dist-clean
-	mkdir $(DIST_TARGET)
-	cp -r Makefile ebin src include scripts README test $(DIST_TARGET)
+dist: distclean
+	mkdir -p $(DIST_TARGET)
+	cp -r Makefile ebin log src include scripts README.md test $(DIST_TARGET)
 	chmod 0755 $(DIST_TARGET)/scripts/*
 	tar -zcf $(TARBALL_NAME).tar.gz $(DIST_TARGET)
-	rm -rf $(DIST_TMP_DIR)
+	rm -rf $(DIST_TARGET)
 
 distclean: clean
 	rm -f $(LOG_PREFIX)*
