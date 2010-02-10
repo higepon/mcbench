@@ -46,7 +46,7 @@ start_link(Args)->
 
 benchmark(CommandType, Concurrency, CommandCount, BaseDataCount, Host, Port) when is_integer(Concurrency) andalso is_integer(CommandCount) ->
     Commands = CommandCount * Concurrency,
-    io:format("~n==== mcbench started ====~n"),
+    io:format("~n==== mcbench started =======================~n~n"),
     io:format("    Server: ~s:~p~n", [Host, Port]),
     io:format("    ~p threads x ~p = ~p commands.~n", [Concurrency, CommandCount, Commands]),
     if BaseDataCount > 0 ->
@@ -68,10 +68,10 @@ benchmark(CommandType, Concurrency, CommandCount, BaseDataCount, Host, Port) whe
     ok = wait_workers(Concurrency, done),
     io:format("done~n"),
     End = erlang:now(),
-    io:format("~n==== mcbench result ====~n"),
+    io:format("~n==== mcbench result ========================~n~n"),
     io:format("    Interval: ~p msec~n", [round(timer:now_diff(End, Start) / 1000)]),
     io:format("    Performance: ~p commands/sec~n", [round(Commands / (timer:now_diff(End, Start) / 1000 / 1000))]),
-    io:format("=========================~n~n"),
+    io:format("~n============================================~n~n"),
     init:stop().
 
 insert_base_data(Host, Port, BaseDataCount) ->
