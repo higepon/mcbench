@@ -71,7 +71,7 @@ benchmark(CommandType, Concurrency, CommandCount, BaseDataCount, Host, Port) whe
     io:format("~n==== mcbench result ====~n"),
     io:format("    Interval: ~p msec~n", [round(timer:now_diff(End, Start) / 1000)]),
     io:format("    Performance: ~p commands/sec~n", [round(Commands / (timer:now_diff(End, Start) / 1000 / 1000))]),
-    io:format("====~n~n"),
+    io:format("=========================~n~n"),
     init:stop().
 
 insert_base_data(Host, Port, BaseDataCount) ->
