@@ -1,9 +1,9 @@
 %%%-------------------------------------------------------------------
 %%% File    : memcached_SUITE.erl
-%%% Author  : higepon <higepon@users.sourceforge.jp>
+%%% Author  : higepon <higepon@labs.cybozu.co.jp>
 %%% Description : Tests for mcbench utilities
 %%%
-%%% Created :  7 Dec 2009 by higepon <higepon@users.sourceforge.jp>
+%%% Created :  7 Dec 2009 by higepon <higepon@labs.cybozu.co.jp>
 %%%-------------------------------------------------------------------
 -module(mcbench_util_SUITE).
 

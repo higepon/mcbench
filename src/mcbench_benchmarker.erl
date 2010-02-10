@@ -1,4 +1,4 @@
-%%    Copyright (c) 2009  Taro Minowa(Higepon) <higepon@users.sourceforge.jp>
+%%    Copyright (C) 2010 Cybozu Labs, Inc., written by Taro Minowa(Higepon) <higepon@labs.cybozu.co.jp>
 %%
 %%    Redistribution and use in source and binary forms, with or without
 %%    modification, are permitted provided that the following conditions
@@ -29,10 +29,10 @@
 
 %%%-------------------------------------------------------------------
 %%% File    : mcbench_benchmarker.erl
-%%% Author  : Taro Minowa(Higepon) <higepon@users.sourceforge.jp>
+%%% Author  : Taro Minowa(Higepon) <higepon@labs.cybozu.co.jp>
 %%% Description : mcbench benchmarker
 %%%
-%%% Created :  10 Dec 2009 by higepon <higepon@users.sourceforge.jp>
+%%% Created :  10 Dec 2009 by higepon <higepon@labs.cybozu.co.jp>
 %%%-------------------------------------------------------------------
 
 -module(mcbench_benchmarker).
