@@ -1,9 +1,9 @@
-## What is mcbench?
+### What is mcbench?
 mcbench is memcached benchmark tool written in Erlang.
 
-## Building and Installing 
+### Building and Installing 
   1. Install a recent version of Erlang.
-  2. Get a release of mcbench from xxxxx.
+  2. Get a release of mcbench from http://github.com/higepon/mcbench/downloads.
   3. make
   4. make install with Environment variables for configuration.
      TARGET_DIR: Installation target directory.
@@ -12,7 +12,7 @@ mcbench is memcached benchmark tool written in Erlang.
      e.g.
        sudo TARGET_DIR=/user/local/mcbench SBIN_DIR=/usr/sbin/ make install 
 
-## Running mcbench
+### How to use
 
     # benchmark of "get" command with initial 10000 datum. 10 threads and 100 commands/thread.
     % mcbench -b 10000  -t 10 -n 100 -c get     
@@ -20,8 +20,8 @@ mcbench is memcached benchmark tool written in Erlang.
     # benchmark of "set" command. 10 threads and 100 commands/thread.
     % mcbench -s 10.0.0.1 -p 11211 -t 10 -n 100 -c get     
 
-## Author
+### Author
 Copyright (C) Cybozu Labs, Inc., written by Taro Minowa(Higepon) <higepon@labs.cybozu.co.jp>
 
-## License
+### License
 New BSD License

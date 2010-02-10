@@ -59,7 +59,7 @@ install_dirs:
 
 dist: distclean
 	mkdir -p $(DIST_TARGET)
-	cp -r Makefile ebin log src include scripts README.md test $(DIST_TARGET)
+	cp -r Makefile ebin log src scripts README.md test $(DIST_TARGET)
 	chmod 0755 $(DIST_TARGET)/scripts/*
 	tar -zcf $(TARBALL_NAME).tar.gz $(DIST_TARGET)
 	rm -rf $(DIST_TARGET)
