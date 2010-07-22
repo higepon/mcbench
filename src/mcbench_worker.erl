@@ -89,7 +89,9 @@ do_set_get(Conn, Keys) ->
 
 do_get(Conn, Keys) ->
     lists:foreach(fun(Key) ->
-                          memcached:get(Conn, Key)
+                          %% N.B. Value may be stored by other memcached client with another serializer.
+                          %%      So we use getb instead of get.
+                          memcached:getb(Conn, Key)
                           end,
                  Keys).
 
