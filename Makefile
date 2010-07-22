@@ -44,7 +44,7 @@ install: all install_dirs
 	@[ -n "$(TARGET_DIR)" ] || (echo "Please set TARGET_DIR. e.g. /usr/local/mcbench"; false)
 	@[ -n "$(SBIN_DIR)" ] || (echo "Please set SBIN_DIR. e.g. /usr/sbin/"; false)
 	mkdir -p $(TARGET_DIR)
-	cp -rp ebin include $(TARGET_DIR)
+	cp -rp ebin $(TARGET_DIR)
 	for script in mcbench mcbench-env; do \
 		chmod 0755 scripts/$$scripts; \
 		cp -p scripts/$$script $(TARGET_DIR)/sbin; \
