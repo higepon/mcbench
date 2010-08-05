@@ -54,6 +54,8 @@ worker(Parent, CommandType, CommandCount, MaxKey, Host, Port) ->
                             ok = do_set(Conn, Keys);
                         get ->
                             ok = do_get(Conn, Keys);
+                        range ->
+                            ok = do_range(Conn, Keys);
                         set_get ->
                             ok = do_set_get(Conn, Keys);
                         Other ->
@@ -78,6 +80,13 @@ do_ntimes(N, Accum, Fun) ->
     do_ntimes(N - 1,
               [apply(Fun, []) | Accum],
               Fun).
+
+do_range(Conn, Keys) ->
+    lists:foreach(fun(Key) ->
+                          _Ret = memcached:get_multib(Conn, ["mio:range-search", Key, "9", "10", "asc"])
+%%                          io:format("Ret=~p~n", [Ret])
+                          end,
+                  Keys).
 
 
 do_set_get(Conn, Keys) ->
